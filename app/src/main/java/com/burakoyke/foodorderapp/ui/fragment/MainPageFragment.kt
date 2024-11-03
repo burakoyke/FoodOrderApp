@@ -16,8 +16,9 @@ import com.burakoyke.foodorderapp.data.entity.Food
 import com.burakoyke.foodorderapp.databinding.FragmentMainPageBinding
 import com.burakoyke.foodorderapp.ui.adapter.FoodAdapter
 import com.burakoyke.foodorderapp.ui.viewmodel.MainPageViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainPageFragment : Fragment() {
     private lateinit var binding : FragmentMainPageBinding
     private lateinit var viewModel : MainPageViewModel

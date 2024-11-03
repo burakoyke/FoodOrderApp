@@ -9,8 +9,9 @@ import androidx.fragment.app.viewModels
 import com.burakoyke.foodorderapp.R
 import com.burakoyke.foodorderapp.databinding.FragmentFavBinding
 import com.burakoyke.foodorderapp.ui.viewmodel.FavViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class FavFragment : Fragment() {
 
     private lateinit var binding : FragmentFavBinding

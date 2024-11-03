@@ -9,8 +9,9 @@ import androidx.fragment.app.viewModels
 import com.burakoyke.foodorderapp.R
 import com.burakoyke.foodorderapp.databinding.FragmentFoodDetailBinding
 import com.burakoyke.foodorderapp.ui.viewmodel.FoodDetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class FoodDetailFragment : Fragment() {
     private lateinit var binding: FragmentFoodDetailBinding
     private lateinit var viewmodel : FoodDetailViewModel

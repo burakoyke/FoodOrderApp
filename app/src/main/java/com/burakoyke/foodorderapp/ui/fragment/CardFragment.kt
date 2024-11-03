@@ -9,7 +9,9 @@ import androidx.fragment.app.viewModels
 import com.burakoyke.foodorderapp.R
 import com.burakoyke.foodorderapp.databinding.FragmentCardBinding
 import com.burakoyke.foodorderapp.ui.viewmodel.CardViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class CardFragment : Fragment() {
 
