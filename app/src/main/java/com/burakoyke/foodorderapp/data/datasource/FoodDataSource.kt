@@ -1,27 +1,31 @@
 package com.burakoyke.foodorderapp.data.datasource
 
 import com.burakoyke.foodorderapp.data.entity.Food
+import com.burakoyke.foodorderapp.data.retrofit.FoodDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class FoodDataSource {
+class FoodDataSource (var fdao : FoodDao){
     suspend fun loadFood(): List<Food> =
         withContext(Dispatchers.IO) {
-            val foodList = ArrayList<Food>()
-            val f1 = Food(1,"Hamburger","burger",20)
-            val f2 = Food(2,"Pizza","pizza",30)
-            val f3 = Food(3,"Fanta","fanta",10)
-            foodList.add(f1)
-            foodList.add(f2)
-            foodList.add(f3)
-            return@withContext foodList
+
+            return@withContext res()
         }
 
     suspend fun searchFood(): List<Food> =
         withContext(Dispatchers.IO) {
-            val foodList = ArrayList<Food>()
-            val f1 = Food(1,"Hamburger","burger",20)
-            foodList.add(f1)
-            return@withContext foodList
+
+            val searchList = ArrayList<Food>()
+            for (food in res()){
+                if (food.yemek_adi.contains("ayran")){
+                    searchList.add(food)
+                }
+            }
+
+            return@withContext searchList
         }
+
+    suspend fun res () : List<Food> {
+        return fdao.loadFood().yemekler
+    }
 }
